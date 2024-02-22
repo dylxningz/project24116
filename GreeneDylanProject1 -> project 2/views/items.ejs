@@ -1,0 +1,30 @@
+<%- include('partials/header') %>
+<main>
+    <div class="container mt-5">
+        <div class="row d-flex align-items-center">
+            <% items.forEach(function(item) { %>
+                <div class="col-md-2">
+                    <div class="card" onclick="location.href='/items/<%= item.id %>';">
+                        <img src="<%= item.image %>" class="card-img-top" alt="Item Image">
+                        <div class="card-body">
+                            <h5 class="card-title"><%= item.title %></h5>
+                            <p class="card-text">Price: $<%= item.price %></p>
+                            <p class="card-text">Condition: <%= item.condition %></p>
+                            <p class="card-text">Offers: <%= item.offers %></p>
+                        </div>
+                    </div>
+                </div>
+            <% }); %>
+        </div>
+    </div>
+</main>
+
+<footer class="d-flex justify-content-between align-items-center">
+    <p class="mb-0">Wilderness Wares 2024</p>
+    <div class="footer-icons">
+        <i class="fab fa-facebook-f fa-lg"></i>
+        <i class="fab fa-twitter fa-lg"></i>
+        <i class="fab fa-instagram fa-lg"></i>
+        <i class="fab fa-pinterest fa-lg"></i>
+    </div>
+</footer>
